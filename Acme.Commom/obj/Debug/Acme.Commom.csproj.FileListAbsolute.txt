@@ -1,0 +1,2 @@
+C:\Users\jmcca\source\repos\PluralsightPractice_ACM\Acme.Commom\obj\Debug\Acme.Commom.csproj.AssemblyReference.cache
+C:\Users\jmcca\source\repos\PluralsightPractice_ACM\Acme.Commom\obj\Debug\Acme.Commom.csproj.CoreCompileInputs.cache
