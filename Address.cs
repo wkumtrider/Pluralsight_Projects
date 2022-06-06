@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PluralsightPractice_ACM.BL
 {
-    internal class Address
+    internal class Address : EntityBase
     {
 
         public Address()
@@ -27,7 +27,7 @@ namespace PluralsightPractice_ACM.BL
         public string Country { get; set; }
         public string AddressType { get; set; }
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
             if (PostalCode == null) isValid = false;

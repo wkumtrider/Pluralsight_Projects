@@ -1,8 +1,20 @@
 ﻿namespace PluralsightPractice_ACM.BL
 {
-    public class Customer
+    public class Customer : EntityBase
     {
+        public Customer(): this(0)
+        {
+
+        }
+        
+        public Customer(int customerId)
+        {
+            CustomerId = customerId;
+            AddressList = new List<Address>();
+        }
+        public List<Address> AddressList { get; set; }
         public int CustomerId { get; private set; }
+        public int CustomerTyep { get; set; }
         public string EmailAddress { get; set; }
         public string FirstName { get; set; }
         public string FullName
@@ -28,7 +40,7 @@
 
         public static int InstanceCount { get; set; }
     
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
@@ -37,14 +49,6 @@
             return isValid;
         }
 
-        public Customer Retrieve(int customerID)
-        {
-            return new Customer();
-        }
-
-        public List<Customer> Retrieve()
-        {
-            return new List<Customer>();
-        }
+        
     }
 }

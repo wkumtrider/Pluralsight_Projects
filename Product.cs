@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PluralsightPractice_ACM.BL
 {
-    internal class Product
+    public class Product : EntityBase, ILoggable
     {
         public Product()
         {
@@ -16,11 +16,32 @@ namespace PluralsightPractice_ACM.BL
         {
             productId = productId;
         }
-        public string ProductName { get; set; }
+        
         public string Description { get; set; }
         public decimal? CurrentPrice { get; set; }
+        public int ProductId { get; set; }
+        private string _productName;
+        public string ProductName
+        {
+            
+            get 
+            {
+                return _productName.InsertSpaces(); 
+            }
+            set 
+            {
+                _productName = value; 
+            }
+        }
 
-        public bool Validate()
+        public string Log() => $"{ProductId}: {ProductName} Detail: {Description} Status: {EntityState.ToString()}";
+        public override string ToString()
+        {
+            return ProductName;
+        }
+
+
+        public override bool Validate()
         {
             var isValid = true;
 
